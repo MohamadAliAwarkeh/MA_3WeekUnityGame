@@ -294,7 +294,7 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: JoyconRHorizontal
+    m_Name: JoyconRHorizontalMac
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -310,7 +310,7 @@ InputManager:
     axis: 10
     joyNum: 1
   - serializedVersion: 3
-    m_Name: JoyconLHorizontal
+    m_Name: JoyconLHorizontalMac
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -324,4 +324,36 @@ InputManager:
     invert: 0
     type: 2
     axis: 10
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: JoyconRHorizontalWin
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.19
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 8
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: JoyconLHorizontalWin
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.19
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 8
     joyNum: 2

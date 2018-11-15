@@ -11,6 +11,7 @@ public class playerOneController : MonoBehaviour {
     public Transform groundCheck;
     public float checkRadius;
     public LayerMask groundLayer;
+    public bool onMac;
 
     //Private Variables
     private float moveInput;
@@ -49,7 +50,15 @@ public class playerOneController : MonoBehaviour {
         isGround = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
 
         //Adding player movement
-        moveInput = Input.GetAxisRaw("JoyconLHorizontal");
+        if (onMac)
+        {
+            moveInput = Input.GetAxisRaw("JoyconLHorizontalMac");
+        }
+        if (!onMac)
+        {
+
+            moveInput = Input.GetAxisRaw("JoyconLHorizontalWin");
+        }
         myRB.velocity = new Vector2(moveInput * moveSpeed, myRB.velocity.y);
 
         //Checking if the character is NOT facing the right direction

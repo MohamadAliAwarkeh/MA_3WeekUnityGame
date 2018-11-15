@@ -11,9 +11,10 @@ public class playerTwoController : MonoBehaviour {
 	public Transform groundCheck;
 	public float checkRadius;
 	public LayerMask groundLayer;
+    public bool onMac;
 
-	//Private Variables
-	private float moveInput;
+    //Private Variables
+    private float moveInput;
 	private Rigidbody2D myRB;
 	private bool facingRight = true;
 	private bool isGround;
@@ -30,7 +31,7 @@ public class playerTwoController : MonoBehaviour {
 
 	void Update()
 	{
-		if (Input.GetKey(KeyCode.Joystick1Button2) && jumps > 0)
+		if (Input.GetKey(KeyCode.Joystick1Button0) && jumps > 0)
 		{
 			myRB.velocity = Vector2.up * jumpForce;
 			jumps--;
@@ -48,9 +49,17 @@ public class playerTwoController : MonoBehaviour {
 		//Here we are checking if the player is on the ground or not
 		isGround = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
 
-		//Adding player movement
-		moveInput = Input.GetAxisRaw("JoyconRHorizontal");
-		myRB.velocity = new Vector2(moveInput * moveSpeed, myRB.velocity.y);
+        //Adding player movement
+        if (onMac)
+        {
+            moveInput = Input.GetAxisRaw("JoyconRHorizontalMac");
+        }
+        if (!onMac)
+        {
+
+            moveInput = Input.GetAxisRaw("JoyconRHorizontalWin");
+        }
+        myRB.velocity = new Vector2(moveInput * moveSpeed, myRB.velocity.y);
 
 		//Checking if the character is NOT facing the right direction
 		if (facingRight == false && moveInput > 0)
