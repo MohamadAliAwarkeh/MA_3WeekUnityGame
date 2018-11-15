@@ -12,12 +12,14 @@ public class PlayerTwoController : MonoBehaviour {
     public Transform groundCheck;
     public float checkRadius;
     public LayerMask groundLayer;
+    public LayerMask sonPlatform;
 
     //Private Variables
     private float moveInput;
     private Rigidbody2D myRB;
     private bool facingRight = true;
     private bool isGround;
+    private bool isOnPlatform;
     private int jumps;
 
     void Start()
@@ -40,7 +42,7 @@ public class PlayerTwoController : MonoBehaviour {
             jumps--;
         }
 
-        if (isGround == true)
+        if (isGround == true || isOnPlatform == true)
         {
             jumps = numOfJumps;
         }
@@ -53,6 +55,7 @@ public class PlayerTwoController : MonoBehaviour {
 
         //Here we are checking if the player is on the ground or not
         isGround = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
+        isOnPlatform = Physics2D.OverlapCircle(groundCheck.position, checkRadius, sonPlatform);
 
         //Adding player movement
         moveInput = inputDevice.RightStickX;
