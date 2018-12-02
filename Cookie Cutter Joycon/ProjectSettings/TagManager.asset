@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - YellowFill
+  - GreenFill
+  - SonObj
+  - SonHead
+  - SonBody
+  - SonFeet
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - PostProcessing
+  - Mother
+  - Son
+  - SonObstacle
+  - MotherObstacle
+  - SonInteractable
+  - InteractableTriggers
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: SonColourFill
+    uniqueID: 1606829059
+    locked: 0
+  - name: SonObstacle
+    uniqueID: 1676664535
+    locked: 0
+  - name: Son
+    uniqueID: 4105395515
+    locked: 0
+  - name: Mother
+    uniqueID: 2041529337
+    locked: 0
