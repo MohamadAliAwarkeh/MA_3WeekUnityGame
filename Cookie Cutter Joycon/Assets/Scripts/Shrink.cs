@@ -6,12 +6,17 @@ using UnityEngine;
 public class Shrink : MonoBehaviour
 {
 	[Range(0, 30)]public float shrinkTime;
-    [HideInInspector]
-	public PlayerRedController playerRedController;
+    [HideInInspector] public PlayerRedController playerRedController;
     private float maxTime = 0;
-	
-	
-	
+    public GameObject outline;
+    public Animator outlineAnim;
+
+    void Start()
+    {
+        outlineAnim = outline.GetComponent<Animator>();
+        outlineAnim.Play("NewState");
+    }
+
 	void Update () 
 	{
 		//Shrinks object down by 0.01f and destroys it
@@ -21,7 +26,13 @@ public class Shrink : MonoBehaviour
         {
             playerRedController.numOfMasksSpawnable++;
             Destroy(gameObject);
+            
 		}
-		
-	}
+
+        if (shrinkTime <= 5)
+        {
+            outlineAnim.Play("FlickerAnim");
+        }
+
+    }
 }

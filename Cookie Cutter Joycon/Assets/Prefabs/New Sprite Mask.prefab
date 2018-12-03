@@ -37,6 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4365194607772182}
   - component: {fileID: 212175353182379002}
+  - component: {fileID: 95337175527429334}
   m_Layer: 9
   m_Name: Outline
   m_TagString: Untagged
@@ -71,6 +72,24 @@ Transform:
   m_Father: {fileID: 4102214500228430}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &95337175527429334
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1389633158747130}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 73dc340e4ba7d3c4eae2312b3c56ed45, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114680539450288112
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -82,9 +101,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea1bed8d535eb4378aa51852c98d584f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shrinkTime: 30
+  shrinkTime: 8
   playerRedController: {fileID: 114278594806435748, guid: f0fa476b5b3444e38aac921f523e6c5f,
     type: 2}
+  outline: {fileID: 1389633158747130}
+  outlineAnim: {fileID: 0}
 --- !u!212 &212175353182379002
 SpriteRenderer:
   m_ObjectHideFlags: 1
